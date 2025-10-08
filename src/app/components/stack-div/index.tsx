@@ -29,7 +29,7 @@ export default function Stacks() {
   const onError: React.ReactEventHandler<HTMLImageElement> = (e) => {
     const img = e.currentTarget;
     const list = (img.dataset.srcs || '').split('|').filter(Boolean);
-    let idx = Number(img.dataset.idx || '0') + 1;
+    const idx = Number(img.dataset.idx || '0') + 1;
     if (idx < list.length) {
       img.dataset.idx = String(idx);
       img.src = list[idx];
