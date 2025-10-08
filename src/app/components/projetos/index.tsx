@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
+import Image, { type StaticImageData } from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, ExternalLink, Github, ChevronDown } from "lucide-react";
@@ -16,11 +16,23 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 
+/* ===== IMPORTS ESTÁTICOS (lendo de /public) =====
+   Garanta que os arquivos existem com exatamente estes nomes:
+   public/assets/projetos/agenda-pro.jpeg
+   public/assets/projetos/hotel-manager.jpeg
+   public/assets/projetos/placar-arena.jpeg
+   public/assets/projetos/biblioteca-pro.jpeg
+*/
+import imgAgendaPro from "@/../public/assets/projetos/agenda-pro.jpeg";
+import imgHotelManager from "@/../public/assets/projetos/hotel-manager.jpeg";
+import imgPlacarArena from "@/../public/assets/projetos/placar-arena.jpeg";
+import imgBibliotecaPro from "@/../public/assets/projetos/biblioteca-pro.jpeg";
+
 export type ProjetoItem = {
   id: string;
   titulo: string;
   subtitulo?: string;
-  imagem: string;
+  imagem: StaticImageData; // <- agora é StaticImageData
   descricao: string;
   techs?: string[];
   siteUrl?: string;
@@ -32,7 +44,7 @@ const demoProjetos: ProjetoItem[] = [
     id: "agenda-pro",
     titulo: "AgendaPro",
     subtitulo: "Sistema de agendamentos com WhatsApp",
-    imagem: "/assets/projetos/agenda-pro.jpeg",
+    imagem: imgAgendaPro,
     descricao:
       "SaaS multiusuário para agendamentos e lembretes automáticos via WhatsApp, com relatórios, permissões e painel em tempo real. Além de controle de agenda em TodoList.",
     techs: ["Laravel", "MySQL", "AdminLTE", "WPPConnect", "Git", "Docker"],
@@ -44,7 +56,7 @@ const demoProjetos: ProjetoItem[] = [
     titulo: "Hotel Manager",
     subtitulo:
       "Sistema desktop em Delphi para gestão de suítes, quartos, reservas e controle financeiro",
-    imagem: "/assets/projetos/hotel-manager.jpeg",
+    imagem: imgHotelManager,
     descricao:
       "Controle de entrada/saída, frigobar, financeiro e relatórios com impressão térmica e integrações.",
     techs: ["Delphi 12", "FireDAC", "MariaDB"],
@@ -55,7 +67,7 @@ const demoProjetos: ProjetoItem[] = [
     id: "placar-arena",
     titulo: "Placar Arena",
     subtitulo: "Sistema de placar esportivo em tempo real",
-    imagem: "/assets/projetos/placar-arena.jpeg",
+    imagem: imgPlacarArena,
     descricao:
       "Sistema web para controle de partidas, sets e pontuação ao vivo, com tela pública e painel administrativo.",
     techs: ["Laravel", "Live updates", "MySQL", "AdminLTE", "Git", "Docker"],
@@ -66,7 +78,7 @@ const demoProjetos: ProjetoItem[] = [
     id: "biblioteca-pro",
     titulo: "BibliotecaPro",
     subtitulo: "Sistema de gestão para bibliotecas",
-    imagem: "/assets/projetos/biblioteca-pro.jpeg",
+    imagem: imgBibliotecaPro,
     descricao:
       "Sistema web para controle de acervo, empréstimos, reservas, multas e relatórios.",
     techs: ["Laravel", "MySQL", "AdminLTE", "Git", "Docker"],
@@ -201,7 +213,7 @@ export default function Projetos({
 
   return (
     <section id="projetos" className="w-full bg-black text-white py-12">
-      {/* CABEÇALHO — igual ao de Depoimentos (pill + subtítulo), CENTRALIZADO */}
+      {/* CABEÇALHO */}
       <div className="mx-auto max-w-5xl px-4 text-center">
         <div className="inline-block rounded-lg bg-gray-200 px-6 py-3 transition-colors hover:bg-gray-300">
           <h2 className="text-2xl font-bold text-black">{titulo}</h2>
