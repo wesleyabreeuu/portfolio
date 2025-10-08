@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import { useMemo } from "react";
+import wesley from "@/../public/assets/wesley.jpg";
 
 /** Rotaciona pequenas frases abaixo do título */
 function RoleRotator() {
@@ -110,7 +111,7 @@ export default function Portfolio() {
             {/* avatar + glow interno */}
             <div className="relative h-full w-full overflow-hidden rounded-full ring-1 ring-white/20 transition-transform duration-300 group-hover:scale-[1.02]">
               <Image
-                src="/assets/wesley.jpg"   // arquivo em /public/assets/wesley.jpg
+                src={wesley}   // arquivo em /public/assets/wesley.jpg
                 alt="Foto de Wesley Abreu"
                 fill
                 priority
