@@ -110,7 +110,7 @@ export default function Portfolio() {
             {/* avatar + glow interno */}
             <div className="relative h-full w-full overflow-hidden rounded-full ring-1 ring-white/20 transition-transform duration-300 group-hover:scale-[1.02]">
               <Image
-                src="/assets/wesley.png"
+                src="/assets/wesley.jpg"
                 alt="Foto de Wesley Abreu"
                 fill
                 priority
