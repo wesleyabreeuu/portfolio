@@ -1,15 +1,27 @@
 // app/components/timeline/index.tsx
 "use client";
 
-import Image from "next/image";
+import Image, { type StaticImageData } from "next/image";
 import { motion, useInView } from "framer-motion";
 import { useEffect, useMemo, useRef, useState } from "react";
+
+/* ===== IMPORTS ESTÁTICOS (lendo de /public) =====
+   Se seu código está em /src, o caminho "@/../public/..." sobe para a raiz.
+   Garanta que os arquivos existem exatamente com esses nomes:
+   public/assets/timeline/1.jpg ... 6.jpg
+*/
+import t1 from "@/../public/assets/timeline/1.jpg";
+import t2 from "@/../public/assets/timeline/2.jpg";
+import t3 from "@/../public/assets/timeline/3.jpg";
+import t4 from "@/../public/assets/timeline/4.jpg";
+import t5 from "@/../public/assets/timeline/5.jpg";
+import t6 from "@/../public/assets/timeline/6.jpg";
 
 type Milestone = {
   year: string;
   title: string;
   text: string;
-  img: string; // caminho dentro de /public
+  img: StaticImageData; // <- agora é StaticImageData
 };
 
 const milestones: Milestone[] = [
@@ -18,42 +30,42 @@ const milestones: Milestone[] = [
     title: "Primeiros passos",
     text:
       "Primeiro contato com programação e lógica; Técnico em Informática pelo IF Sul de Minas e trabalho de conclusão de curso com sistema completo em Delphi para biblioteca.",
-    img: "/assets/timeline/1.jpg",
+    img: t1,
   },
   {
     year: "2023",
     title: "Desenvolvimento web",
     text:
       "Retomando no caminho da programação, aprofundo meus conhecimentos em HTML, CSS e JavaScript pela FAETEC.",
-    img: "/assets/timeline/2.jpg",
+    img: t2,
   },
   {
     year: "2024",
     title: "Sistema Desktop",
     text:
       "Voltei a me aprofundar na criação de aplicações desktop e como fruto aconteceu a construção de sistema de gerenciamento de hotéis e sistema de dizimistas para paróquias com Delphi 12, MySQL e FireDAC.",
-    img: "/assets/timeline/3.jpg",
+    img: t3,
   },
   {
     year: "2025",
     title: "Back-end",
     text:
       "PHP, Laravel e APIs REST passam a ser parte fundamental dos meus projetos após o curso Back-end feito no Senai. Projetos de Biblioteca, agendamento e TodoList com integração ao Whatsapp e de Gerenciamento de placar de arenas criados.",
-    img: "/assets/timeline/4.jpg",
+    img: t4,
   },
   {
     year: "2025",
     title: "Engenharia de Software",
     text:
       "Iniciei minha graduação em Engenharia de Software pela Anhanguera, dando mais um passo importante na minha formação acadêmica e fortalecendo a base teórica para atuar com ainda mais segurança e qualidade na área de tecnologia.",
-    img: "/assets/timeline/5.jpg",
+    img: t5,
   },
   {
     year: "2025",
     title: "Front-end e Full Stack",
     text:
       "React e Next.js entram no meu repertório com o curso Front-end do Senai, permitindo a criação de interfaces modernas e responsivas. Atualmente, atuo como desenvolvedor Full Stack, integrando front-end e back-end para soluções completas.",
-    img: "/assets/timeline/6.jpg",
+    img: t6,
   },
 ];
 
