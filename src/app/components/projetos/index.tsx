@@ -48,8 +48,8 @@ const demoProjetos: ProjetoItem[] = [
     descricao:
       "SaaS multiusuário para agendamentos e lembretes automáticos via WhatsApp, com relatórios, permissões e painel em tempo real. Além de controle de agenda em TodoList.",
     techs: ["Laravel", "MySQL", "AdminLTE", "WPPConnect", "Git", "Docker"],
-    siteUrl: "#",
-    repoUrl: "#",
+    // siteUrl: "#",
+    repoUrl: "https://github.com/wesleyabreeuu/agendaPro",
   },
   {
     id: "hotel-manager",
@@ -60,8 +60,8 @@ const demoProjetos: ProjetoItem[] = [
     descricao:
       "Controle de entrada/saída, frigobar, financeiro e relatórios com impressão térmica e integrações.",
     techs: ["Delphi 12", "FireDAC", "MariaDB"],
-    siteUrl: "#",
-    repoUrl: "#",
+    // siteUrl: "#",
+    repoUrl: "https://github.com/wesleyabreeuu/sistema-motel",
   },
   {
     id: "placar-arena",
@@ -71,8 +71,8 @@ const demoProjetos: ProjetoItem[] = [
     descricao:
       "Sistema web para controle de partidas, sets e pontuação ao vivo, com tela pública e painel administrativo.",
     techs: ["Laravel", "Live updates", "MySQL", "AdminLTE", "Git", "Docker"],
-    siteUrl: "#",
-    repoUrl: "#",
+    // siteUrl: "#",
+    repoUrl: "https://github.com/wesleyabreeuu/placar-arena",
   },
   {
     id: "biblioteca-pro",
@@ -82,8 +82,8 @@ const demoProjetos: ProjetoItem[] = [
     descricao:
       "Sistema web para controle de acervo, empréstimos, reservas, multas e relatórios.",
     techs: ["Laravel", "MySQL", "AdminLTE", "Git", "Docker"],
-    siteUrl: "#",
-    repoUrl: "#",
+    // siteUrl: "#",
+    repoUrl: "https://github.com/wesleyabreeuu/biblioteca",
   },
 ];
 
@@ -175,11 +175,11 @@ function ProjetoDetalhe({ item }: { item: ProjetoItem }) {
 
             <div className="mt-5 flex flex-wrap gap-3">
               {item.siteUrl ? (
-                <Button asChild className="bg-violet-600 text-white hover:bg-violet-700">
-                  <Link href={item.siteUrl} target="_blank" rel="noreferrer">
-                    <ExternalLink className="mr-2 h-4 w-4" /> Visitar site
-                  </Link>
-                </Button>
+                // <Button asChild className="bg-violet-600 text-white hover:bg-violet-700">
+                //   <Link href={item.siteUrl} target="_blank" rel="noreferrer">
+                //     <ExternalLink className="mr-2 h-4 w-4" /> Visitar site
+                //   </Link>
+                // </Button>
               ) : null}
               {item.repoUrl ? (
                 <Button
