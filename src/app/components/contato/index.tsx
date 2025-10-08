@@ -1,3 +1,9 @@
+"use client";
+
+import Image from "next/image";
+// use a extensão exata que existe no repo (1.jpeg ou 1.jpg)
+import contatoImg from "@/../public/assets/contato/1.jpeg";
+
 export default function Contato() {
   return (
     <form action="https://fabform.io/f/xxxxx" method="post">
@@ -5,11 +11,19 @@ export default function Contato() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             {/* ===== Coluna Esquerda ===== */}
-            <div className="relative lg:mb-0 mb-10 overflow-hidden rounded-2xl lg:rounded-l-2xl">
-              <img
-                src="/assets/contato/1.jpeg"
+            <div
+              className="
+                relative lg:mb-0 mb-10 overflow-hidden rounded-2xl lg:rounded-l-2xl
+                min-h-[320px] lg:min-h-[520px]   /* altura p/ Image fill */
+              "
+            >
+              <Image
+                src={contatoImg}
                 alt="Contato"
-                className="h-full w-full object-cover"
+                fill
+                priority
+                sizes="(min-width:1024px) 50vw, 100vw"
+                className="object-cover"
               />
               {/* overlay suave */}
               <div className="absolute inset-0 bg-gradient-to-tr from-black/60 via-black/25 to-transparent" />
@@ -21,10 +35,7 @@ export default function Contato() {
               <div className="absolute bottom-6 left-6 right-6">
                 <div className="rounded-2xl bg-white p-6 shadow-xl ring-1 ring-black/5">
                   {/* Telefone */}
-                  <a
-                    href="tel:+5535991947159"
-                    className="flex items-center gap-4 mb-5"
-                  >
+                  <a href="tel:+5535991947159" className="flex items-center gap-4 mb-5">
                     <svg
                       width="28"
                       height="28"
@@ -64,9 +75,7 @@ export default function Contato() {
                         strokeLinecap="round"
                       />
                     </svg>
-                    <span className="text-slate-800">
-                      wesleyavivabr@gmail.com
-                    </span>
+                    <span className="text-slate-800">wesleyavivabr@gmail.com</span>
                   </a>
 
                   {/* Endereço */}
@@ -215,7 +224,7 @@ export default function Contato() {
                   </label>
                 </div>
 
-                {/* Botão — gradiente + shine */}
+                {/* Botão */}
                 <button
                   type="submit"
                   className="group relative w-full h-12 rounded-full bg-gradient-to-r from-violet-600 to-fuchsia-600 text-white font-semibold shadow-lg transition hover:from-violet-500 hover:to-fuchsia-500 focus:outline-none focus:ring-4 focus:ring-violet-500/30"
@@ -225,7 +234,7 @@ export default function Contato() {
                   Enviar
                 </button>
 
-                {/* Atalho opcional para WhatsApp */}
+                {/* WhatsApp */}
                 <a
                   href="https://wa.me/5535991947159"
                   target="_blank"
