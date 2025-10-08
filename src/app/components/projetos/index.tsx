@@ -32,7 +32,7 @@ export type ProjetoItem = {
   id: string;
   titulo: string;
   subtitulo?: string;
-  imagem: StaticImageData; // <- agora é StaticImageData
+  imagem: StaticImageData;
   descricao: string;
   techs?: string[];
   siteUrl?: string;
@@ -174,14 +174,16 @@ function ProjetoDetalhe({ item }: { item: ProjetoItem }) {
             ) : null}
 
             <div className="mt-5 flex flex-wrap gap-3">
-              {item.siteUrl ? (
-                // <Button asChild className="bg-violet-600 text-white hover:bg-violet-700">
-                //   <Link href={item.siteUrl} target="_blank" rel="noreferrer">
-                //     <ExternalLink className="mr-2 h-4 w-4" /> Visitar site
-                //   </Link>
-                // </Button>
-              ) : null}
-              {item.repoUrl ? (
+              {/* Renderiza o botão de site somente se existir siteUrl */}
+              {item.siteUrl && (
+                <Button asChild className="bg-violet-600 text-white hover:bg-violet-700">
+                  <Link href={item.siteUrl} target="_blank" rel="noreferrer">
+                    <ExternalLink className="mr-2 h-4 w-4" /> Visitar site
+                  </Link>
+                </Button>
+              )}
+
+              {item.repoUrl && (
                 <Button
                   variant="outline"
                   asChild
@@ -191,7 +193,7 @@ function ProjetoDetalhe({ item }: { item: ProjetoItem }) {
                     <Github className="mr-2 h-4 w-4" /> Repositório
                   </Link>
                 </Button>
-              ) : null}
+              )}
             </div>
           </CardContent>
         </div>
