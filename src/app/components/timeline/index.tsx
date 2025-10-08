@@ -18,21 +18,21 @@ const milestones: Milestone[] = [
     title: "Primeiros passos",
     text:
       "Primeiro contato com programação e lógica; Técnico em Informática pelo IF Sul de Minas e trabalho de conclusão de curso com sistema completo em Delphi para biblioteca.",
-    img: "/assets/timeline/1.jpeg",
+    img: "/assets/timeline/1.jpg",
   },
   {
     year: "2023",
     title: "Desenvolvimento web",
     text:
       "Retomando no caminho da programação, aprofundo meus conhecimentos em HTML, CSS e JavaScript pela FAETEC.",
-    img: "/assets/timeline/2.jpeg",
+    img: "/assets/timeline/2.jpg",
   },
   {
     year: "2024",
     title: "Sistema Desktop",
     text:
       "Voltei a me aprofundar na criação de aplicações desktop e como fruto aconteceu a construção de sistema de gerenciamento de hotéis e sistema de dizimistas para paróquias com Delphi 12, MySQL e FireDAC.",
-    img: "/assets/timeline/3.jpeg",
+    img: "/assets/timeline/3.jpg",
   },
   {
     year: "2025",
@@ -46,14 +46,14 @@ const milestones: Milestone[] = [
     title: "Engenharia de Software",
     text:
       "Iniciei minha graduação em Engenharia de Software pela Anhanguera, dando mais um passo importante na minha formação acadêmica e fortalecendo a base teórica para atuar com ainda mais segurança e qualidade na área de tecnologia.",
-    img: "/assets/timeline/5.JFIF",
+    img: "/assets/timeline/5.jpg",
   },
   {
     year: "2025",
     title: "Front-end e Full Stack",
     text:
       "React e Next.js entram no meu repertório com o curso Front-end do Senai, permitindo a criação de interfaces modernas e responsivas. Atualmente, atuo como desenvolvedor Full Stack, integrando front-end e back-end para soluções completas.",
-    img: "/assets/timeline/6.jpeg",
+    img: "/assets/timeline/6.jpg",
   },
 ];
 

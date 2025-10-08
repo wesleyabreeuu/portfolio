@@ -9,7 +9,9 @@ const nextConfig: NextConfig = {
   basePath: isProd ? `/${repo}` : undefined,
   assetPrefix: isProd ? `/${repo}/` : undefined,
 
-  eslint: { ignoreDuringBuilds: true }, // <- NÃO trava o build por lint
+  eslint: { ignoreDuringBuilds: true },
+  
+  env: { NEXT_PUBLIC_BASE_PATH: isProd ? `/${repo}` : "" },// <- NÃO trava o build por lint
 };
 
 export default nextConfig;
