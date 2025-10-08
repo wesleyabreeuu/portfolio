@@ -66,7 +66,7 @@ export default function Portfolio() {
           </div>
 
           <h1 className="mt-5 text-5xl font-extrabold leading-[1.05] md:text-6xl">
-            Olá, eu sou{" "} <br/>
+            Olá, eu sou <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-white/70">
               Wesley Abreu
             </span>
@@ -110,7 +110,7 @@ export default function Portfolio() {
             {/* avatar + glow interno */}
             <div className="relative h-full w-full overflow-hidden rounded-full ring-1 ring-white/20 transition-transform duration-300 group-hover:scale-[1.02]">
               <Image
-                src="/assets/wesley.jpg"
+                src="/assets/wesley.jpg"   // arquivo em /public/assets/wesley.jpg
                 alt="Foto de Wesley Abreu"
                 fill
                 priority
