@@ -42,30 +42,6 @@ export default function Depoimento() {
                 </div>
               </div>
             </li>
-
-            {/* João Batista – homem */}
-            <li className="text-sm leading-6">
-              <div className="relative group">
-                <div className="absolute transition rounded-lg opacity-25 -inset-1 bg-black blur group-hover:opacity-50" />
-                <div className="relative p-6 space-y-6 leading-none rounded-lg bg-white ring-1 ring-gray-200">
-                  <div className="flex items-center space-x-4">
-                    <img
-                      src="https://randomuser.me/api/portraits/men/37.jpg"
-                      className="w-12 h-12 bg-center bg-cover border rounded-full"
-                      alt="João Batista"
-                    />
-                    <div>
-                      <h3 className="text-lg font-semibold text-black">João Batista</h3>
-                      <p className="text-gray-500 text-md">Diretor de Escola Técnica</p>
-                    </div>
-                  </div>
-                  <p className="leading-normal text-gray-700 text-md">
-                    Com o BibliotecaPro conseguimos digitalizar todo o acervo da nossa biblioteca.
-                    O sistema é robusto, fácil de usar e tem um suporte incrível.
-                  </p>
-                </div>
-              </div>
-            </li>
           </ul>
 
           {/* Coluna 2 */}
