@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import contatoImg from "@/../public/assets/contato/1.jpeg";
+import contatoImg from "@/../public/assets/contato/1.jpg";
 
 export default function Contato() {
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">(
