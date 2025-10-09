@@ -92,7 +92,7 @@ export default function Portfolio() {
               Clique para fazer contato
             </a>
             <a
-              href="#sobre"
+              href="#quem-sou"
               className="rounded-xl border border-white/20 bg-white/5 px-6 py-3 font-semibold text-white/90 backdrop-blur transition hover:bg-white/10"
             >
               Sobre mim
