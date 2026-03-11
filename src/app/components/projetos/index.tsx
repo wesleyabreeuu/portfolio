@@ -16,7 +16,7 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 
-/* ===== IMPORTS ESTÁTICOS (lendo de /public) =====
+/* ===== IMPORTS ESTATICOS (lendo de /public) =====
    Garanta que os arquivos existem com exatamente estes nomes:
    public/assets/projetos/agenda-pro.jpeg
    public/assets/projetos/hotel-manager.jpeg
@@ -27,6 +27,10 @@ import imgAgendaPro from "@/../public/assets/projetos/agenda-pro.jpeg";
 import imgHotelManager from "@/../public/assets/projetos/hotel-manager.jpeg";
 import imgPlacarArena from "@/../public/assets/projetos/placar-arena.jpeg";
 import imgBibliotecaPro from "@/../public/assets/projetos/biblioteca-pro.jpeg";
+import imgSaoJose from "@/../public/assets/projetos/sitesaojose.jpeg";
+import imgRafael from "@/../public/assets/projetos/siterafael.jpeg";
+import imgjfInstalacoes from "@/../public/assets/projetos/sistemajf.jpeg";
+
 
 export type ProjetoItem = {
   id: string;
@@ -46,7 +50,7 @@ const demoProjetos: ProjetoItem[] = [
     subtitulo: "Sistema de agendamentos com WhatsApp",
     imagem: imgAgendaPro,
     descricao:
-      "SaaS multiusuário para agendamentos e lembretes automáticos via WhatsApp, com relatórios, permissões e painel em tempo real. Além de controle de agenda em TodoList.",
+      "SaaS multiusuario para agendamentos e lembretes automaticos via WhatsApp, com relatorios, permissoes e painel em tempo real. Alem de controle de agenda em TodoList.",
     techs: ["Laravel", "MySQL", "AdminLTE", "WPPConnect", "Git", "Docker"],
     // siteUrl: "#",
     repoUrl: "https://github.com/wesleyabreeuu/agendaPro",
@@ -55,10 +59,10 @@ const demoProjetos: ProjetoItem[] = [
     id: "hotel-manager",
     titulo: "Hotel Manager",
     subtitulo:
-      "Sistema desktop em Delphi para gestão de suítes, quartos, reservas e controle financeiro",
+      "Sistema desktop em Delphi para gestao de suites, quartos, reservas e controle financeiro",
     imagem: imgHotelManager,
     descricao:
-      "Controle de entrada/saída, frigobar, financeiro e relatórios com impressão térmica e integrações.",
+      "Controle de entrada/saida, frigobar, financeiro e relatorios com impressao termica e integracoes.",
     techs: ["Delphi 12", "FireDAC", "MariaDB"],
     // siteUrl: "#",
     repoUrl: "https://github.com/wesleyabreeuu/sistema-motel",
@@ -69,7 +73,7 @@ const demoProjetos: ProjetoItem[] = [
     subtitulo: "Sistema de placar esportivo em tempo real",
     imagem: imgPlacarArena,
     descricao:
-      "Sistema web para controle de partidas, sets e pontuação ao vivo, com tela pública e painel administrativo.",
+      "Sistema web para controle de partidas, sets e pontuacao ao vivo, com tela publica e painel administrativo.",
     techs: ["Laravel", "Live updates", "MySQL", "AdminLTE", "Git", "Docker"],
     // siteUrl: "#",
     repoUrl: "https://github.com/wesleyabreeuu/placar-arena",
@@ -77,13 +81,42 @@ const demoProjetos: ProjetoItem[] = [
   {
     id: "biblioteca-pro",
     titulo: "BibliotecaPro",
-    subtitulo: "Sistema de gestão para bibliotecas",
+    subtitulo: "Sistema de gestao para bibliotecas",
     imagem: imgBibliotecaPro,
     descricao:
-      "Sistema web para controle de acervo, empréstimos, reservas, multas e relatórios.",
+      "Sistema web para controle de acervo, emprestimos, reservas, multas e relatorios.",
     techs: ["Laravel", "MySQL", "AdminLTE", "Git", "Docker"],
     // siteUrl: "#",
     repoUrl: "https://github.com/wesleyabreeuu/biblioteca",
+  },
+  {
+    id: "contabilidade-sao-jose",
+    titulo: "Site Contabilidade Sao Jose",
+    subtitulo: "Site institucional para escritorio de contabilidade",
+    imagem: imgSaoJose,
+    descricao:
+      "Projeto institucional focado na apresentacao dos servicos contabeis, fortalecimento da presenca digital e geracao de novos contatos.",
+    techs: ["React", "Next.js", "TypeScript", "Tailwind CSS"],
+    siteUrl: "https://saojosecont.com.br/",
+  },
+  {
+    id: "rafael-dias-acessoria-contabil",
+    titulo: "Site Rafael Dias Acessoria Contabil",
+    subtitulo: "Site institucional para assessoria contabil",
+    imagem: imgRafael,
+    descricao:
+      "Landing page profissional desenvolvida para destacar servicos, facilitar o contato com clientes e transmitir credibilidade ao escritorio.",
+    techs: ["React", "Next.js", "TypeScript", "Tailwind CSS"],
+    siteUrl: "https://rafaeldiascontador.com/",
+  },
+  {
+    id: "jf-instalacoes",
+    titulo: "Sistema JF Instalacoes",
+    subtitulo: "Sistema para gestao operacional e administrativa",
+    imagem: imgjfInstalacoes,
+    descricao:
+      "Sistema voltado ao controle de processos internos, organizacao de servicos, acompanhamento de demandas e apoio a rotina administrativa da empresa.",
+    techs: ["Laravel", "MySQL", "AdminLTE", "Git"],
   },
 ];
 
@@ -113,7 +146,7 @@ function SanduicheItem({
         <div className="flex-1">
           <p className="font-semibold leading-tight text-white">{titulo}</p>
           {subtitulo ? (
-            <p className="text-sm text-gray-300 leading-snug">{subtitulo}</p>
+            <p className="text-sm leading-snug text-gray-300">{subtitulo}</p>
           ) : null}
         </div>
         <ChevronDown
@@ -149,7 +182,7 @@ function ProjetoDetalhe({ item }: { item: ProjetoItem }) {
             />
           </div>
           <CardContent className="p-6">
-            <CardHeader className="p-0 mb-3">
+            <CardHeader className="mb-3 p-0">
               <CardTitle className="text-xl text-white">{item.titulo}</CardTitle>
               {item.subtitulo ? (
                 <CardDescription className="text-gray-300">
@@ -158,14 +191,14 @@ function ProjetoDetalhe({ item }: { item: ProjetoItem }) {
               ) : null}
             </CardHeader>
 
-            <p className="text-white leading-relaxed">{item.descricao}</p>
+            <p className="leading-relaxed text-white">{item.descricao}</p>
 
             {item.techs && item.techs.length > 0 ? (
               <div className="mt-4 flex flex-wrap gap-2">
                 {item.techs.map((t) => (
                   <Badge
                     key={t}
-                    className="rounded-full bg-white text-black font-medium"
+                    className="rounded-full bg-white font-medium text-black"
                   >
                     {t}
                   </Badge>
@@ -174,7 +207,6 @@ function ProjetoDetalhe({ item }: { item: ProjetoItem }) {
             ) : null}
 
             <div className="mt-5 flex flex-wrap gap-3">
-              {/* Renderiza o botão de site somente se existir siteUrl */}
               {item.siteUrl && (
                 <Button asChild className="bg-violet-600 text-white hover:bg-violet-700">
                   <Link href={item.siteUrl} target="_blank" rel="noreferrer">
@@ -190,7 +222,7 @@ function ProjetoDetalhe({ item }: { item: ProjetoItem }) {
                   className="border-white bg-white text-black hover:bg-gray-200"
                 >
                   <Link href={item.repoUrl} target="_blank" rel="noreferrer">
-                    <Github className="mr-2 h-4 w-4" /> Repositório
+                    <Github className="mr-2 h-4 w-4" /> Repositorio
                   </Link>
                 </Button>
               )}
@@ -205,7 +237,7 @@ function ProjetoDetalhe({ item }: { item: ProjetoItem }) {
 export default function Projetos({
   itens = demoProjetos,
   titulo = "Projetos",
-  descricao = "Alguns dos trabalhos que já desenvolvi.",
+  descricao = "Alguns dos trabalhos que ja desenvolvi.",
 }: {
   itens?: ProjetoItem[];
   titulo?: string;
@@ -214,8 +246,7 @@ export default function Projetos({
   const [aberto, setAberto] = useState<string | null>(itens[0]?.id ?? null);
 
   return (
-    <section id="projetos" className="w-full bg-black text-white py-12">
-      {/* CABEÇALHO */}
+    <section id="projetos" className="w-full bg-black py-12 text-white">
       <div className="mx-auto max-w-5xl px-4 text-center">
         <div className="inline-block rounded-lg bg-gray-200 px-6 py-3 transition-colors hover:bg-gray-300">
           <h2 className="text-2xl font-bold text-black">{titulo}</h2>
@@ -223,8 +254,7 @@ export default function Projetos({
         <p className="mt-4 text-lg text-gray-300">{descricao}</p>
       </div>
 
-      {/* LISTA */}
-      <div className="mt-8 space-y-4 mx-auto max-w-5xl px-4">
+      <div className="mx-auto mt-8 max-w-5xl space-y-4 px-4">
         {itens.map((item) => {
           const ativo = aberto === item.id;
           return (
